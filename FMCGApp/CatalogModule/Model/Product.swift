@@ -14,7 +14,7 @@ struct Product: Identifiable, Equatable, Hashable {
     let price: Double
     let discount: Double?
     let badge: String?
-    let isLiked: Bool
+    var isLiked: Bool
     let rating: Double?
     let isCountable: Bool // for price for item and weight
     let defaultCountForOneItem: Double

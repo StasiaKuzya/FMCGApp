@@ -12,7 +12,7 @@ struct CatalogView: View {
     @State var isList: Bool = true
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             //TODO: change on navBar button
             HStack {
                 Button {
@@ -21,7 +21,7 @@ struct CatalogView: View {
                     Image(isList ? "chip1" : "chip2")
                 }
                 .padding(.horizontal, 16)
-                .padding(.vertical, 4)
+                .padding(.vertical, 8)
                 Spacer()
             }
             Divider()
@@ -39,6 +39,7 @@ struct CatalogView: View {
             } else {
                 List(viewModel.products, id: \.id) { product in
                     ListCell(product: product)
+                        .buttonStyle(.borderless)
                         .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                         .listRowBackground(Color.white)
                         .listRowSeparator(.hidden)

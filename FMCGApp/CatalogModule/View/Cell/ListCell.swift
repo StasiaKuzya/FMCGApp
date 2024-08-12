@@ -56,6 +56,7 @@ struct ListCell: View {
             }
             Divider()
         }
+        .frame(height: 176)
     }
 }
 

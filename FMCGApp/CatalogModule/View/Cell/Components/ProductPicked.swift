@@ -15,8 +15,23 @@ struct ProductPicked: View {
     
     var body: some View {
         VStack(spacing: 8) {
-            RoundedRectangle(cornerRadius: 12).fill(.gray).opacity(0.5)
-                .frame(height: 28)
+            HStack(spacing: 0) {
+                Text("Шт")
+                    .foregroundStyle(isCountable ? .black : .gray)
+                    .frame(maxWidth: .infinity)
+                    .background(RoundedRectangle(cornerRadius: 12)
+                        .fill(isCountable ? .white : .clear))
+                    .padding(2)
+                Text("Кг")
+                    .foregroundStyle(!isCountable ? .black : .gray)
+                    .frame(maxWidth: .infinity)
+                    .background(RoundedRectangle(cornerRadius: 12)
+                        .fill(!isCountable ? .white : .clear))
+                    .padding(2)
+            }
+            .background( RoundedRectangle(cornerRadius: 12).fill(.gray).opacity(0.3)
+                .frame(height: 28))
+            
             HStack {
                 Button {
                     minuusItem()
